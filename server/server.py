@@ -7,8 +7,8 @@ from flask_restful import Api, Resource
 
 app = Flask(__name__)
 
-CORS(app)
-api = Api(app)
+CORS(app) #Permission to run app
+api = Api(app) 
 
 all_models = ['logistic_regression', 'k_nearest_neighbors', 'support_vector_machine', 'decision_tree', 'random_forest', 'gradient_boosting', 'naive_bayes', 'neural_network', 'ada_boost', 'xg_boost']
 @app.after_request
@@ -18,11 +18,12 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
     return response
 
+#This is called a route
 @app.route("/", methods=['GET'])
 def return_home():
-    return jsonify({
+    return jsonify({ #makes info recieved in cleanly
         'message': "Hello world!",
-        'people': ["Aa", "Bb", "Cc"]
+        'people': ["Trishna", "Win", "Jay"]
     })
 
 @app.route('/first_image', methods = ['GET'])

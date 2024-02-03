@@ -34,7 +34,7 @@ const IndexMSG = () => {
                     ))}
                 </div>
             ) : (
-                <h1>LOADING...</h1>
+                <h1>LOADING...</h1> /*in case it isnt working*/
             )}
         </div>
     )
